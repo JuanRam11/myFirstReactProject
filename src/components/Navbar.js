@@ -1,22 +1,22 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Link } from "react-router-dom";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 
 const Navbar = ({ icon, title }) => {
   return (
-    <nav className="navbar navbar-light bg-dark">
-      <div className="container-fluid">
-        <div className="navbar-brand text-white">
+    <nav className='navbar navbar-light bg-dark'>
+      <div className='container-fluid'>
+        <div className='navbar-brand text-white'>
           <i className={icon}></i>
-          <Link to="/" style={{ color: "white", textDecoration: "none" }}>
+          <Link to='/' style={{ color: 'white', textDecoration: 'none' }}>
             {title}
           </Link>
         </div>
-        <div style={{ display: "flex" }}>
-          <Link to="/" className="a nav-link" style={{ color: "white" }}>
+        <div style={{ display: 'flex' }}>
+          <Link to='/' className='a nav-link' style={{ color: 'white' }}>
             Home
           </Link>
-          <Link to="/about" className="a nav-link" style={{ color: "white" }}>
+          <Link to='/about' className='a nav-link' style={{ color: 'white' }}>
             About
           </Link>
         </div>
@@ -26,8 +26,8 @@ const Navbar = ({ icon, title }) => {
 };
 
 Navbar.defaultProps = {
-  title: "Github Finder",
-  icon: "fab fa-github px-2",
+  title: 'Github Finder',
+  icon: 'fab fa-github px-2',
 };
 
 Navbar.propTypes = {

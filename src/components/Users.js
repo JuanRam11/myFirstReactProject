@@ -1,17 +1,19 @@
-import React from "react";
-import Useritem from "./Useritem";
-import Spinner from "./Spinner";
-import PropTypes from "prop-types";
+import React from 'react';
+import Useritem from './Useritem';
+import Spinner from './Spinner';
+import PropTypes from 'prop-types';
 
 const Users = ({ users, loading }) => {
   if (loading) {
     return <Spinner />;
   } else {
     return (
-      <div style={{ display: "flex", flexWrap: "wrap" }}>
-        {users.map((user) => (
-          <Useritem key={user.id} user={user} />
-        ))}
+      <div className='container-fluid'>
+        <div className='row'>
+          {users.map((user) => (
+            <Useritem key={user.id} user={user} />
+          ))}
+        </div>
       </div>
     );
   }

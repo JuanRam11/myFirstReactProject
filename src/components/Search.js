@@ -1,16 +1,16 @@
-import React, { useState } from "react";
-import PropTypes from "prop-types";
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
 
 const Search = ({ onSearch, showClear, onAlert, clearSearch }) => {
-  const [text, setText] = useState("");
+  const [text, setText] = useState('');
 
   const Onsubmit = (e) => {
     e.preventDefault();
-    if (text === "") {
-      onAlert("Please Type Something on Search", "Danger");
+    if (text === '') {
+      onAlert('Please Type Something on Search Bar', 'Danger');
     } else {
       onSearch(text);
-      setText("");
+      setText('');
     }
   };
 
@@ -18,28 +18,28 @@ const Search = ({ onSearch, showClear, onAlert, clearSearch }) => {
 
   const onClick = (e) => {
     e.preventDefault();
-    setText("");
+    setText('');
     clearSearch(text);
   };
 
   return (
     <form onSubmit={Onsubmit}>
       <input
-        type="text"
-        name="text"
-        className="form-control"
-        placeholder="Search"
+        type='text'
+        name='text'
+        className='form-control'
+        placeholder='Search'
         value={text}
         onChange={Onchange}
       ></input>
       <input
-        type="submit"
-        value="Search"
-        className="btn-dark btn-block form-control mt-2"
+        type='submit'
+        value='Search'
+        className='btn-dark btn-block form-control mt-2'
       />
       {showClear && (
         <button
-          className="btn btn-secondary form-control mt-2"
+          className='btn btn-secondary form-control mt-2'
           onClick={onClick}
         >
           Clear
