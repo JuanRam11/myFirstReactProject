@@ -13,10 +13,10 @@ const Navbar = ({ icon, title }) => {
           </Link>
         </div>
         <div style={{ display: "flex" }}>
-          <Link to="/" className="a nav-link">
+          <Link to="/" className="a nav-link" style={{ color: "white" }}>
             Home
           </Link>
-          <Link to="/about" className="a nav-link">
+          <Link to="/about" className="a nav-link" style={{ color: "white" }}>
             About
           </Link>
         </div>

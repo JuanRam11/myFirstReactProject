@@ -1,3 +1,11 @@
+This is a React app from a course on Udemy that I created with the help of the instructor.
+
+This is a GithubFinder app that allows you to search for github users within the app.
+
+This app also allows you to see public repos, if the person if hirable and some others items.
+
+Juan Then.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
