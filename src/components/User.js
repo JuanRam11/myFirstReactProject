@@ -31,13 +31,14 @@ const User = ({ user, loading, match, SpecUser, searchRepos, repos }) => {
   }
   return (
     <div className='container border rounded'>
-      <Link to='/'>
+      <Link to='/' style={{ display: 'flex', width: '90px' }}>
         <span
-          className='btn'
+          className='btn text-start'
           style={{ backgroundColor: 'black', color: 'white' }}
         >
           <i className='fas fa-long-arrow-alt-left'> Back</i>
         </span>
+
         {/*  <div className='text-start text-dark' style={{ backgroundColor: '' }}>
           <i className='fas fa-long-arrow-alt-left'> Back</i>
         </div> */}
