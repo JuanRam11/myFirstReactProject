@@ -7,7 +7,7 @@ const Search = ({ onSearch, showClear, onAlert, clearSearch }) => {
   const Onsubmit = (e) => {
     e.preventDefault();
     if (text === '') {
-      onAlert('Please Type Something on Search Bar', 'Danger');
+      onAlert('Please, Type Something on Search Bar', 'Danger');
     } else {
       onSearch(text);
       setText('');

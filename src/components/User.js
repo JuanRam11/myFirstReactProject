@@ -32,9 +32,12 @@ const User = ({ user, loading, match, SpecUser, searchRepos, repos }) => {
   return (
     <div className='container border rounded'>
       <Link to='/'>
-        <div className='w-auto'>
-          <button className='btn btn-secondary'>Back</button>
-        </div>
+        <span
+          className='btn'
+          style={{ backgroundColor: 'black', color: 'white' }}
+        >
+          <i className='fas fa-long-arrow-alt-left'> Back</i>
+        </span>
         {/*  <div className='text-start text-dark' style={{ backgroundColor: '' }}>
           <i className='fas fa-long-arrow-alt-left'> Back</i>
         </div> */}
@@ -52,44 +55,62 @@ const User = ({ user, loading, match, SpecUser, searchRepos, repos }) => {
         className='img img-responsive rounded-circle'
         src={avatar_url}
         alt='Avatar'
-        style={{ width: '20%' }}
+        style={{ width: '30%', maxWidth: '300px', minWidth: '200px' }}
       ></img>
       <h1>{name}</h1>
       <p>{bio}</p>
-      <div className='text-left'>
+      <div className='text-start'>
         <p>{location}</p>
         <p>
-          <b>Blog:</b> {blog}
+          <b>Blog: </b>
+          <a href={blog} target='blank'>
+            {blog}
+          </a>
         </p>
         <p>
-          <b>User:</b> {login}
+          <b>Github User: </b> {login}
         </p>
         <p>
-          <b>HTML URL:</b> {html_url}
+          <b>HTML URL: </b>
+          <a href={html_url} target='blank'>
+            {html_url}
+          </a>
         </p>
       </div>
-      <div className='d-flex flex now-wrap justify-content-center'>
-        <p className='badge rounded-pill bg-success mx-2 text-dark fs-6'>
-          <b>Followers: </b>
-          {followers}
-        </p>
-
-        <p className='badge rounded-pill bg-info mx-2 text-dark fs-6'>
-          <b>Following: </b>
-          {following}
-        </p>
-        <p className='badge rounded-pill bg-secondary mx-2 text-dark fs-6'>
-          <b>Public gists: </b>
-          {public_gists}
-        </p>
-        <p className='badge rounded-pill bg-warning mx-2 text-dark fs-6'>
-          <b>Public repos: </b>
-          {public_repos}
-        </p>
+      <div className='container py-4'>
+        <div className='row'>
+          <div className='col-12 col-sm-6 col-md-3 col-lg-3'>
+            <p className='badge rounded-pill bg-success mx-2 text-dark fs-6'>
+              <b>Followers: </b>
+              {followers}
+            </p>
+          </div>
+          <div className='col-12 col-sm-6 col-md-3 col-lg-3'>
+            <p className='badge rounded-pill bg-info mx-2 text-dark fs-6'>
+              <b>Following: </b>
+              {following}
+            </p>
+          </div>
+          <div className='col-12 col-sm-6 col-md-3 col-lg-3'>
+            <p className='badge rounded-pill bg-secondary mx-2 text-dark fs-6'>
+              <b>Public Gists: </b>
+              {public_gists}
+            </p>
+          </div>
+          <div className='col-12 col-sm-6 col-md-3 col-lg-3'>
+            {' '}
+            <p className='badge rounded-pill bg-warning mx-2 text-dark fs-6'>
+              <b>Public Repos: </b>
+              {public_repos}
+            </p>
+          </div>
+        </div>
       </div>
-      <h2>Repositories</h2>
+      <h2 className='py-4'>Repositories</h2>
       <div className='container d-block text-left'>
-        <Repos Repos={repos} />
+        <div className='row'>
+          <Repos Repos={repos} />
+        </div>
       </div>
     </div>
   );
