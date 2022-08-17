@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-const Search = ({ onSearch, showClear, onAlert, clearSearch }) => {
+const Search = ({ onSearch, showClear, onAlert, clearSearch }: any) => {
   const [text, setText] = useState('');
 
-  const Onsubmit = (e) => {
+  const Onsubmit = (e: any) => {
     e.preventDefault();
     if (text === '') {
       onAlert('Please, Type Something on Search Bar', 'Danger');
@@ -14,9 +14,9 @@ const Search = ({ onSearch, showClear, onAlert, clearSearch }) => {
     }
   };
 
-  const Onchange = (e) => setText(e.target.value);
+  const Onchange = (e: any) => setText(e.target.value);
 
-  const onClick = (e) => {
+  const onClick = (e: any) => {
     e.preventDefault();
     setText('');
     clearSearch(text);

@@ -1,15 +1,15 @@
-import "./App.css";
-import Navbar from "./components/Navbar";
-import Users from "./components/Users";
-import React, { useState, Fragment } from "react";
-import axios from "axios";
-import Search from "./components/Search";
-import Alert from "./components/Alert";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import About from "./components/About";
-import User from "./components/User";
-import PropTypes from "prop-types";
-import Notfound from "./components/Notfound";
+import './App.css';
+import Navbar from './components/Navbar';
+import Users from './components/Users';
+import React, { useState, Fragment } from 'react';
+import axios from 'axios';
+import Search from './components/Search';
+import Alert from './components/Alert';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import About from './components/About';
+import User from './components/User';
+import PropTypes from 'prop-types';
+import Notfound from './components/Notfound';
 
 const App = () => {
   const [users, setUsers] = useState([]);
@@ -18,26 +18,26 @@ const App = () => {
   const [user, setUser] = useState({});
   const [repos, setRepos] = useState([]);
 
-  const onSearch = async (searchUser) => {
+  const onSearch = async (searchUser: string) => {
     setLoading(true);
-    const data = await axios.get(
+    const data: any = await axios.get(
       `https://api.github.com/search/users?q=${searchUser}&${process.env.REACT_APP_CLIENT_ID}&${process.env.REACT_APP_CLIENT_SECRET}`
     );
     setUsers(data.data.items);
     setLoading(false);
   };
 
-  const SpecUser = async (username) => {
+  const SpecUser = async (username: string) => {
     setLoading(true);
-    const data = await axios.get(
+    const data: any = await axios.get(
       `https://api.github.com/users/${username}?${process.env.REACT_APP_CLIENT_ID}&${process.env.REACT_APP_CLIENT_SECRET}`
     );
     setUser(data.data);
     setLoading(false);
   };
 
-  const onAlert = async (msg, type) => {
-    setAlert(msg, type);
+  const onAlert = async (msg: any) => {
+    setAlert(msg);
     setTimeout(() => {
       setAlert(null);
     }, 3000);
@@ -48,9 +48,9 @@ const App = () => {
     setLoading(false);
   };
 
-  const searchRepos = async (username) => {
+  const searchRepos = async (username: string) => {
     setLoading(true);
-    const data = await axios.get(
+    const data: any = await axios.get(
       `https://api.github.com/users/${username}/repos?per_page=5&sort=created:asc&${process.env.REACT_APP_CLIENT_ID}&${process.env.REACT_APP_CLIENT_SECRET}`
     );
     setRepos(data.data);
@@ -58,13 +58,13 @@ const App = () => {
   };
   return (
     <Router>
-      <div className="App">
-        <Navbar title="Github Finder" />
-        <div className="container pt-2">
+      <div className='App'>
+        <Navbar title='Github Finder' />
+        <div className='container pt-2'>
           <Switch>
             <Route
               exact
-              path="/"
+              path='/'
               render={(props) => (
                 <Fragment>
                   <Alert alert={alert} />
@@ -78,10 +78,10 @@ const App = () => {
                 </Fragment>
               )}
             />
-            <Route exact path="/about" component={About} />
+            <Route exact path='/about' component={About} />
             <Route
               exact
-              path="/user/:login"
+              path='/user/:login'
               render={(props) => (
                 <Fragment>
                   <User

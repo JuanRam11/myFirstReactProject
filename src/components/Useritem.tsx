@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Useritem = ({ user: { login, avatar_url } }) => {
+const Useritem = ({ user: { login, avatar_url } }: any) => {
   return (
     <div className='col-12 col-sm-4 col-md-4 col-lg-4 p-0 pt-3'>
       <div
