@@ -3,14 +3,14 @@ import Useritem from './Useritem';
 import Spinner from './Spinner';
 import PropTypes from 'prop-types';
 
-const Users = ({ users, loading }) => {
+const Users = ({ users, loading }: any) => {
   if (loading) {
     return <Spinner />;
   } else {
     return (
       <div className='container-fluid'>
         <div className='row'>
-          {users.map((user) => (
+          {users.map((user: any) => (
             <Useritem key={user.id} user={user} />
           ))}
         </div>

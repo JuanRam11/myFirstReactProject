@@ -2,7 +2,7 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const Navbar = ({ icon, title }) => {
+const Navbar = ({ icon, title }: any) => {
   return (
     <nav className='navbar navbar-light bg-dark'>
       <div className='container-fluid'>

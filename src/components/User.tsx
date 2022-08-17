@@ -4,7 +4,7 @@ import Spinner from './Spinner';
 import PropTypes from 'prop-types';
 import Repos from './Repos';
 
-const User = ({ user, loading, match, SpecUser, searchRepos, repos }) => {
+const User = ({ user, loading, match, SpecUser, searchRepos, repos }: any) => {
   useEffect(() => {
     SpecUser(match.params.login);
     searchRepos(match.params.login);

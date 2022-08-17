@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Repositem({ repo }) {
+function Repositem({ repo }: any) {
   return (
     <div className='col-12 col-sm-12 col-md-12 col-lg-12 text-start border-bottom rounded py-1'>
       <h4>
